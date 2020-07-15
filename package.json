@@ -1,0 +1,14 @@
+{
+  "name": "hugo-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:real-jacket/hugo-blog.git",
+  "author": "jacket <1762982273@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "algolia": "atomic-algolia"
+  },
+  "dependencies": {
+    "atomic-algolia": "^0.3.17"
+  }
+}

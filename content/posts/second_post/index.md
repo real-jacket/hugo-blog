@@ -2,7 +2,7 @@
 weight: 4
 title: 'Second_post'
 date: 2020-07-12T12:22:07+08:00
-draft: true
+draft: false
 description: '这篇文章展示了基本的 Markdown 语法和格式.'
 resources:
   - name: 'featured-image'
