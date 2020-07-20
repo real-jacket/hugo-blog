@@ -1,7 +1,9 @@
 ---
 title: 浅谈HTNL常用标签
 date: 2018-07-05 17:39:41
-tags: ['技术文章']
+tags: ['HTML']
+categories: ['Web']
+hiddenFromHomePage: true
 ---
 
 # HTML 常用标签

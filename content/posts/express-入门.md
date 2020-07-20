@@ -1,8 +1,9 @@
 ---
 title: express 入门
 date: 2018-10-25 17:33:04
-tags: ['express']
-categories: [' node', ' express']
+tags: ['express', 'node']
+categories: ['node']
+hiddenFromHomePage: true
 ---
 
 ## 什么是 Express？

@@ -1,7 +1,9 @@
 ---
 title: 入门nodejs
 date: 2018-09-04 16:05:10
-tags: ['学习笔记']
+tags: ['node']
+categories: ['node']
+hiddenFromHomePage: true
 ---
 
 ## 网络与 IP

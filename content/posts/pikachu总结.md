@@ -1,7 +1,9 @@
 ---
 title: pikachu总结
 date: 2018-08-26 10:05:57
-tags: ['']
+tags: ['总结', '项目']
+categories: ['总结']
+hiddenFromHomePage: true
 ---
 
 ## 简介

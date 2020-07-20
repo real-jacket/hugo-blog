@@ -1,8 +1,9 @@
 ---
 title: vscode 快捷操作
 date: 2018-12-18 21:21:46
-tags: ['vscode']
-categories: [' 工具', ' vscode']
+tags: ['vscode', '工具']
+categories: ['工具']
+hiddenFromHomePage: true
 ---
 
 ## 命令行使用 vs code
@@ -11,7 +12,7 @@ categories: [' 工具', ' vscode']
 
 `code + <filename>/<filepath>` 打开文件或者文件目录
 
-|              参数              |                    作用                    |           注意事项           |
+|              参数              |                    作用                    |            注意项            |
 | :----------------------------: | :----------------------------------------: | :--------------------------: |
 |               -r               |               在同一窗口打开               | 会删掉原有工作区，只保留一个 |
 | -g &lt; file:line[character] > | 打开文件，自动跳转到文件中某个特定的行与列 |              无              |

@@ -1,7 +1,9 @@
 ---
 title: HTTP入门
 date: 2018-08-20 09:35:58
-tags: ['学习笔记']
+tags: ['HTTP']
+categories: ['网络']
+hiddenFromHomePage: true
 ---
 
 ## 基本概念

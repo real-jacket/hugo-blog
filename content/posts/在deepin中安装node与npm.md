@@ -1,7 +1,8 @@
 ---
 title: 在deepin中安装node与npm
 date: 2018-08-16 11:28:26
-tags: ['deepin系统相关']
+tags: ['deepin']
+hiddenFromHomePage: true
 ---
 
 最近装了 deepin15.6，想安装 http-server 服务，结果报错，原来是 npm 版本太老，以下罗列几种 node 安装方式，这几种方式适用 Linux/ubantu/deepin 系统。

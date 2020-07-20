@@ -1,8 +1,9 @@
 ---
 title: hexo 博客转移
 date: 2019-01-02 10:11:24
-tags: ['hexo']
-categories: [' hexo博客系列']
+tags: ['hexo', '博客']
+categories: ['博客']
+hiddenFromHomePage: true
 ---
 
 最近觉得 window 下的命令行实在难看，即使是 gitbash 也无法拯救，毕竟一些乱码着实是要逼死我这种强迫症。于是下定决心，将笔记本里的另一个 linux 系统 deepin 作为主力系统，开始各方面的迁移。代码啥的都好说，毕竟有 github 托管，但是 hexo 博客就让人头疼了，对于我这个刚入行不久的小白，实在是不知道从何处下手。

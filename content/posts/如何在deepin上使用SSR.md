@@ -1,7 +1,8 @@
 ---
 title: 如何在deepin上使用SSR
 date: 2018-08-21 10:16:57
-tags: ['deepin系统相关']
+tags: ['deepin']
+hiddenFromHomePage: true
 ---
 
 ### 背景

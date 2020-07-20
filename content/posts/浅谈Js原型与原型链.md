@@ -1,7 +1,9 @@
 ---
 title: 浅谈Js原型与原型链
 date: 2018-07-28 21:58:31
-tags: ['技术']
+tags: ['JS']
+categories: ['JS']
+hiddenFromHomePage: true
 ---
 
 关于 JS 面向对象，我们首先需要了解的一个问题，就是什么是内存！

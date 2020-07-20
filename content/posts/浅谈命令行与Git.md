@@ -2,6 +2,7 @@
 title: 浅谈命令行与Git
 date: 2018-07-03 16:50:07
 tags: ['Git']
+hiddenFromHomePage: true
 ---
 
 ## 一些基本命令行的使用

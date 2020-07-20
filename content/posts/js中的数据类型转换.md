@@ -1,7 +1,9 @@
 ---
 title: js中的数据类型转换
 date: 2018-07-24 17:41:31
-tags: ['技术']
+tags: ['JS']
+categories: ['JS']
+hiddenFromHomePage: true
 ---
 
 js 中有 6 个基本数据类型：number、string、boolean、Symbol、null、undefined 与一个复杂的数据类型 object，object 又可以分为三个子类型：狭义的对象 object、数组 array 与函数 function。这些数据类型之间有些是可以相互转换的，然而转换前我们得知道怎么判断这些数据类型。

@@ -1,7 +1,9 @@
 ---
 title: js中的数据类型
 date: 2018-07-21 18:44:57
-tags: ['技术']
+tags: ['JS']
+categories: ['JS']
+hiddenFromHomePage: true
 ---
 
 JS 中的数据类型一共有 7 种：
