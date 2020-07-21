@@ -35,15 +35,17 @@ jobs:
       - name: Deploy
         run: |
           cd ./public
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          msg="rebuilding site $(date)"
-          if [ -n "$*" ]; then
-            msg="$*"
+          if [ -n "$(git status -s)" ];then
+              git config --local user.email "action@github.com"
+              git config --local user.name "GitHub Action"
+              git add .
+              msg="rebuilding site $(date)"
+              if [ -n "$*" ]; then
+                msg="$*"
+              fi
+              git commit -m "$msg"
+              git push origin master
           fi
-          git commit -m "$msg"
-          git push
 
       - name: Push search json
         env:
