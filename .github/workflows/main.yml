@@ -33,11 +33,19 @@ jobs:
           npm install
           npm run algolia
 
-      - name: Cd public
-        run: cd ./public
-
-      - name: Checkout master
+      - name: Checkout public
         uses: actions/checkout@v2
+        with:
+          repository: real-jacket/real-jacket.github.io
+          token: ${{ secrets.ACCESS_TOKEN }}
+          path: public
 
       - name: Deploy
-        run: ../deploy.sh
+        run: |
+          git add .
+          msg="rebuilding site $(date)"
+          if [ -n "$*" ]; then
+            msg="$*"
+          fi
+          git commit -m "$msg"
+          git push origin master
