@@ -31,7 +31,9 @@ jobs:
           # fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
       - name: Deploy
-        run: ./deploy.sh
+        run: |
+          chmod +x deploy.sh
+          ./deploy.sh
 
       - name: Push search json
         env:
