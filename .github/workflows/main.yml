@@ -46,6 +46,8 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
+          directory: public
+          repository: real-jacket/real-jacket.github.io
 
       # - name: Deploy
       #   run: |
