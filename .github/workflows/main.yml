@@ -11,6 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          token: ${{ secrets.ACCESS_TOKEN }}
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
@@ -33,15 +34,16 @@ jobs:
           npm install
           npm run algolia
 
-      - name: Checkout public
-        uses: actions/checkout@v2
-        with:
-          repository: real-jacket/real-jacket.github.io
-          token: ${{ secrets.ACCESS_TOKEN }}
-          path: public
+      # - name: Checkout public
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: real-jacket/real-jacket.github.io
+      #     token: ${{ secrets.ACCESS_TOKEN }}
+      #     path: public
 
       - name: Deploy
         run: |
+          cd ./public
           git add .
           msg="rebuilding site $(date)"
           if [ -n "$*" ]; then
