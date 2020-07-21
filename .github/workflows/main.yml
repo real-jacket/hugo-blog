@@ -9,13 +9,14 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Hugo repo
+        uses: actions/checkout@v2
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Checkout blog repo
+      - name: Checkout Blog repo
         uses: actions/checkout@v2
         with:
           repository: real-jacket/real-jacket.github.io
@@ -44,18 +45,6 @@ jobs:
           git commit -m "$msg"
           git push
 
-      # - name: Deploy
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.ACCESS_TOKEN }}
-      #     directory: public
-      #     repository: real-jacket/real-jacket.github.io
-
-      # - name: Deploy
-      #   run: |
-      #     chmod +x deploy.sh
-      #     ./deploy.sh
-
       - name: Push search json
         env:
           ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
@@ -65,19 +54,3 @@ jobs:
         run: |
           npm install
           npm run algolia
-      # - name: Checkout public
-      #   uses: actions/checkout@v2
-      #   with:
-      #     repository: real-jacket/real-jacket.github.io
-      #     token: ${{ secrets.ACCESS_TOKEN }}
-      #     path: public
-      # - name: Deploy
-      #   run: |
-      #     cd ./public
-      #     git add .
-      #     msg="rebuilding site $(date)"
-      #     if [ -n "$*" ]; then
-      #       msg="$*"
-      #     fi
-      #     git commit -m "$msg"
-      #     git push origin master
