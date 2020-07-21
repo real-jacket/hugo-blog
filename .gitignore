@@ -1,6 +1,5 @@
 node_modules/
 *.lock
-public/
 .env
 .DS_Store
 resources/
