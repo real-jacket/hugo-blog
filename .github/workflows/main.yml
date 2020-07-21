@@ -20,6 +20,7 @@ jobs:
         with:
           repository: real-jacket/real-jacket.github.io
           path: public
+          token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -30,7 +31,7 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Commit files
+      - name: Deploy
         run: |
           cd ./public
           git config --local user.email "action@github.com"
@@ -41,13 +42,14 @@ jobs:
             msg="$*"
           fi
           git commit -m "$msg"
+          git push
 
-      - name: Deploy
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          directory: public
-          repository: real-jacket/real-jacket.github.io
+      # - name: Deploy
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.ACCESS_TOKEN }}
+      #     directory: public
+      #     repository: real-jacket/real-jacket.github.io
 
       # - name: Deploy
       #   run: |
