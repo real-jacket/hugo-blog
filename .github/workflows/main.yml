@@ -33,5 +33,8 @@ jobs:
           npm install
           npm run algolia
 
-      - name: Deploy
-        run: ./deploy.sh
+      - name: Cd public
+        run: cd ./public
+
+      - uses: actions/checkout@v2
+        run: ../deploy.sh
