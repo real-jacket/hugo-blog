@@ -36,5 +36,8 @@ jobs:
       - name: Cd public
         run: cd ./public
 
+      - name: Checkout master
       - uses: actions/checkout@v2
+
+      - name: Deploy
         run: ../deploy.sh
