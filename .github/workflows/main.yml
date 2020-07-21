@@ -23,8 +23,15 @@ jobs:
 
       - name: Build and deploy
         run: |
-          chmod +x deploy.sh
-          deploy.sh
+          hugo --minify
+          cd ./public
+          git add .
+          msg="rebuilding site $(date)"
+          if [ -n "$*" ]; then
+            msg="$*"
+          fi
+          git commit -m "$msg"
+          git push origin master
 
       - name: Push search json
         env:
