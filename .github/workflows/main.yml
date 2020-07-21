@@ -21,8 +21,8 @@ jobs:
           hugo-version: "0.74.2"
           extended: true
 
-      - name: Build
-        run: hugo --minify
+      - name: Build and deploy
+        run: ./deploy.sh
 
       - name: Push search json
         env:
@@ -33,21 +33,19 @@ jobs:
         run: |
           npm install
           npm run algolia
-
       # - name: Checkout public
       #   uses: actions/checkout@v2
       #   with:
       #     repository: real-jacket/real-jacket.github.io
       #     token: ${{ secrets.ACCESS_TOKEN }}
       #     path: public
-
-      - name: Deploy
-        run: |
-          cd ./public
-          git add .
-          msg="rebuilding site $(date)"
-          if [ -n "$*" ]; then
-            msg="$*"
-          fi
-          git commit -m "$msg"
-          git push origin master
+      # - name: Deploy
+      #   run: |
+      #     cd ./public
+      #     git add .
+      #     msg="rebuilding site $(date)"
+      #     if [ -n "$*" ]; then
+      #       msg="$*"
+      #     fi
+      #     git commit -m "$msg"
+      #     git push origin master
