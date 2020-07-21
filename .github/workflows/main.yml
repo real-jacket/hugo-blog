@@ -21,19 +21,29 @@ jobs:
           hugo-version: "0.74.2"
           extended: true
 
-      - name: Build and deploy
+      - name: Build
         run: hugo --minify
 
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          # submodules: true # Fetch Hugo themes (true OR recursive)
-          # fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+      - name: Commit files
+        run: |
+          cd ./public
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          msg="rebuilding site $(date)"
+          if [ -n "$*" ]; then
+            msg="$*"
+          fi
+          git commit -m "$msg"
 
       - name: Deploy
-        run: |
-          chmod +x deploy.sh
-          ./deploy.sh
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+
+      # - name: Deploy
+      #   run: |
+      #     chmod +x deploy.sh
+      #     ./deploy.sh
 
       - name: Push search json
         env:
