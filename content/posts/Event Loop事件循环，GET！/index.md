@@ -135,15 +135,16 @@ poll 阶段有两个功能：
 ### Event Loop 大体流程
 
 每一个阶段都有一个队列，我们只关注 timers、poll、check 阶段来分析一下，我们在用命令行运行 node server.js 命令时，发生了什么：
-1、Node.js 启动，初始化 Event Loop
-2、运行 server.js 脚本内容
-3、开始运行 Event Loop
-4、timers 阶段看脚本里是否设置定时器 setTimeout，比如一个 4ms 延迟与一个 100ms 延迟的定时器，把它放到 timers 队列中，进入下一步，I/O callbacks 阶段，idle, prepare 阶段，这两个阶段都不会停留。
-5、进入 poll（轮询）阶段，首先它会查看定时器时间是否到了，比如 4ms 到了，他就进入下一阶段 check 阶段、close callbacks 阶段，然后回到 timers 阶段执行设置的 4ms 回调函数，接着继续第 4 步到第 5 步。4ms 没到，则停留在这一阶段，处理 poll 队列里的任务，直到 4ms 到、100ms 到，然后循环回到 timers 阶段执行回调。
 
-这里有一个问题：当 poll 阶段在处理任务 1 时，比如这个任务 1 要花费 100ms，在这 100ms 期间，setTimeout 定时器到了，则它的回调会等 poll 处理玩任务 1 后立即循环进入 timers 阶段执行
+1. Node.js 启动，初始化 Event Loop
+2. 运行 server.js 脚本内容
+3. 开始运行 Event Loop
+4. timers 阶段看脚本里是否设置定时器 setTimeout，比如一个 4ms 延迟与一个 100ms 延迟的定时器，把它放到 timers 队列中，进入下一步，I/O callbacks 阶段，idle, prepare 阶段，这两个阶段都不会停留。
+5. 进入 poll（轮询）阶段，首先它会查看定时器时间是否到了，比如 4ms 到了，他就进入下一阶段 check 阶段、close callbacks 阶段，然后回到 timers 阶段执行设置的 4ms 回调函数，接着继续第 4 步到第 5 步。4ms 没到，则停留在这一阶段，处理 poll 队列里的任务，直到 4ms 到、100ms 到，然后循环回到 timers 阶段执行回调。
 
-6、从 poll 阶段进入 check 阶段时，主要是看是否有 setImmediate() 任务，如果有则立即执行，然后再进入 close callbacks 阶段，进行循环，进入 timers 阶段。
+> 这里有一个问题：当 poll 阶段在处理任务 1 时，比如这个任务 1 要花费 100ms，在这 100ms 期间，setTimeout 定时器到了，则> 它的回调会等 poll 处理玩任务 1 后立即循环进入 timers 阶段执行
+
+6. 从 poll 阶段进入 check 阶段时，主要是看是否有 setImmediate() 任务，如果有则立即执行，然后再进入 close callbacks 阶段，进行循环，进入 timers 阶段。
 
 ### setImmediate() vs setTimeout()
 
