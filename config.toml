@@ -9,7 +9,8 @@ hasCJKLanguage = true
 title = "Xiaomu"
 
 # 更改使用 Hugo 构建网站时使用的默认主题
-theme = "LoveIt"
+# theme = "LoveIt"
+theme = "FixIt"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -53,11 +54,14 @@ enableEmoji = true
     # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
     svgFavicon = ""
     # Android 浏览器主题色
-    themeColor = "#ffffff"
+    # themeColor = "#ffffff"
     # Safari 图标颜色
     iconColor = "#5bbad5"
     # Windows v8-10 磁贴颜色
     tileColor = "#da532c"
+    [params.app.themeColor]
+      light = "#ffffff"
+      dark = "#252627"
 
   # 搜索配置
   [params.search]

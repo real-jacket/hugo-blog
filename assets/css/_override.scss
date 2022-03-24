@@ -1,0 +1,12 @@
+@import url('https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKai-Regular.css');
+@import url('https://cdn.jsdelivr.net/gh/satouriko/LxgwWenKai_Webfonts@v1.101/dist/LXGWWenKaiMono-Regular.css');
+
+$global-font-family: LXGWWenKai, system-ui, -apple-system, BlinkMacSystemFont,
+  PingFang SC, Microsoft YaHei UI, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+  Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif !default;
+$global-font-size: 16px;
+$global-font-weight: 400;
+$global-line-height: 1.5rem;
+
+$code-font-family: LXGWWenKaiMono, Source Code Pro, Menlo, Consolas, Monaco,
+  monospace, $global-font-family !default;

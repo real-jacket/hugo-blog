@@ -5,3 +5,6 @@
 # 	path = public
 # 	url = https://github.com/real-jacket/real-jacket.github.io.git
 # 	branch = master
+[submodule "themes/FixIt"]
+	path = themes/FixIt
+	url = https://github.com/Lruihao/FixIt.git
