@@ -7,17 +7,19 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Checkout Hugo repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
       - name: Checkout Blog repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: real-jacket/real-jacket.github.io
           path: public
