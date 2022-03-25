@@ -82,8 +82,8 @@ enableEmoji = true
     absoluteURL = false
     [params.search.algolia]
       index = "hugo-blog"
-      appID = "HM4VPLQSYP"
-      searchKey = "04fcea8f7b5235736abe4b7e3f18a2c7"
+      appID = "XMKAXOQ2OJ"
+      searchKey = "9ac92f2281a440b224c66755cb044ef4"
 
   # 主页信息设置
   [params.home]
