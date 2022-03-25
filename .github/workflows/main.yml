@@ -14,8 +14,8 @@ jobs:
       - name: Checkout Hugo repo
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          submodules: true # Fetch Hugo themes (true OR recursive)
+          # token: ${{ secrets.ACCESS_TOKEN }}
+          submodules: recursive # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
       - name: Checkout Blog repo
@@ -23,12 +23,12 @@ jobs:
         with:
           repository: real-jacket/real-jacket.github.io
           path: public
-          token: ${{ secrets.ACCESS_TOKEN }}
+          # token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.74.2"
+          hugo-version: "0.95.0"
           extended: true
 
       - name: Build
