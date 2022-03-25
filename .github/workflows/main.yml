@@ -55,6 +55,6 @@ jobs:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
           ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
           ALGOLIA_INDEX_FILE: ${{ secrets.ALGOLIA_INDEX_FILE }}
-        run: |
+        run: |             
           npm install
           npm run algolia
