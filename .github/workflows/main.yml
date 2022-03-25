@@ -35,19 +35,18 @@ jobs:
         run: hugo --minify
 
       - name: Deploy
+      - uses: actions/checkout@v3
         run: |
           cd ./public
-          if [ -n "$(git status -s)" ];then
-              git config --local user.email "action@github.com"
-              git config --local user.name "GitHub Action"
-              git add .
-              msg="rebuilding site $(date)"
-              if [ -n "$*" ]; then
-                msg="$*"
-              fi
-              git commit -m "$msg"
-              git push origin master
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          msg="rebuilding site $(date)"
+          if [ -n "$*" ]; then
+            msg="$*"
           fi
+          git commit -m "$msg"
+          git push
 
       - name: Push search json
         env:
