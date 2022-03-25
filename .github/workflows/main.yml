@@ -23,7 +23,7 @@ jobs:
         with:
           repository: real-jacket/real-jacket.github.io
           path: public
-          token: ${{ secrets.ACCESS_TOKEN }}
+          # token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
