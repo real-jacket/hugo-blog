@@ -5,7 +5,7 @@ comment: false
 ---
 
 <h1 style="text-align: right;font-weight: bold;margin-top: 0;">Xiaomu</h1>
-
+<img src="http://ghchart.rshah.org/real-jacket.svg" alt="real-jacket's Github chart" style="width:100%;" />
 <img src="https://github-readme-stats.vercel.app/api?username=real-jacket" title="xiaomu's GitHub stats" alt="xiaomu's GitHub stats" style="width:54%;"/>
 
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=real-jacket&layout=compact" title="xiaomu's GitHub stats" alt="xiaomu's GitHub stats" style="width:45.06%;"/>
