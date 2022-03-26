@@ -3,14 +3,17 @@ baseURL = "https://real-jacket.github.io"
 defaultContentLanguage = "zh-cn"
 # 网站语言, 仅在这里 CN 大写
 languageCode = "zh-CN"
-# 是否包括中日韩文字
-hasCJKLanguage = true
 # 网站标题
 title = "Xiaomu"
+
+# Ignore errors
+# 忽略错误
+ignoreErrors = ["error-remote-getjson"]
 
 # 更改使用 Hugo 构建网站时使用的默认主题
 # theme = "LoveIt"
 theme = "FixIt"
+
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -22,7 +25,134 @@ enableGitInfo = true
 # 是否使用 emoji 代码
 enableEmoji = true
 
+# Post frontmatter config
+[frontmatter]
+  lastmod = [":git", "lastmod", ":fileModTime", ":defalut"]
+
+[languages]
+  [languages.en]
+    weight = 1
+    #language code
+    languageCode = "en"
+    # language name
+    languageName = "English"
+    # whether to include Chinese/Japanese/Korean
+    hasCJKLanguage = false
+    # default amount of posts in each pages
+    paginate = 12
+    # [UA-XXXXXXXX-X] google analytics code
+    googleAnalytics = ""
+    # copyright description used only for seo schema
+    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+        pre = ""
+        # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+        post = ""
+        name = "Posts"
+        url = "/posts/"
+        # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
+        title = ""
+        weight = 1
+      [[languages.en.menu.main]]
+        identifier = "tags"
+        pre = ""
+        post = ""
+        name = "Tags"
+        url = "/tags/"
+        title = ""
+        weight = 2
+      [[languages.en.menu.main]]
+        identifier = "categories"
+        pre = ""
+        post = ""
+        name = "Categories"
+        url = "/categories/"
+        title = ""
+        weight = 3
+      [[languages.en.menu.main]]
+        identifier = "about"
+        pre = ""
+        post = ""
+        name = "About"
+        url = "/about/"
+        title = ""
+        weight = 4
+      [[languages.en.menu.main]]
+        identifier = "github"
+        pre = "<i class='fab fa-github fa-fw'></i>"
+        post = ""
+        name = ""
+        url = "https://github.com/real-jacket"
+        title = "GitHub"
+        weight = 7
+  [languages.zh-cn]
+    weight = 2
+    # 网站语言, 仅在这里 CN 大写
+    languageCode = "zh-CN"
+    # 语言名称
+    languageName = "简体中文"
+    # 是否包括中日韩文字
+    hasCJKLanguage = true
+    # 默认每页列表显示的文章数目
+    paginate = 12
+    # [UA-XXXXXXXX-X] 谷歌分析代号
+    googleAnalytics = ""
+    # 版权描述，仅仅用于 SEO
+    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+  [languages.zh-cn.menu]
+    [[languages.zh-cn.menu.main]]
+      identifier = "posts"
+      # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+      pre = ""
+      # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+      post = ""
+      name = "所有文章"
+      url = "/posts/"
+      # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
+      title = ""
+      weight = 1
+    [[languages.zh-cn.menu.main]]
+      identifier = "tags"
+      pre = ""
+      post = ""
+      name = "标签"
+      url = "/tags/"
+      title = ""
+      weight = 2
+    [[languages.zh-cn.menu.main]]
+      identifier = "categories"
+      pre = ""
+      post = ""
+      name = "分类"
+      url = "/categories/"
+      title = ""
+      weight = 3
+    [[languages.zh-cn.menu.main]]
+      identifier = "about"
+      pre = ""
+      post = ""
+      name = "关于"
+      url = "/about/"
+      title = ""
+      weight = 5
+    [[languages.zh-cn.menu.main]]
+      identifier = "github"
+      pre = "<i class='fab fa-github fa-fw'></i>"
+      post = ""
+      name = ""
+      url = "https://github.com/real-jacket"
+      title = "GitHub"
+      weight = 7
+
+
+  
+
 [params]
+  # 网站描述
+  description = "xiaomu 的个人博客"
   # LoveIt 主题版本
   version = "0.2.X"
   # site default theme ("light", "dark", "auto")
@@ -40,10 +170,11 @@ enableEmoji = true
   # website images for Open Graph and Twitter Cards
   # 网站图片, 用于 Open Graph 和 Twitter Cards
   images = ["/logo.png"]
-  # 网站描述
-  description = "关于 LoveIt 主题"
+  # enable PWA si nce v0.2.12
+  # 开启 PWA 支持 since v0.2.12
+  enablePWA = true
   # 网站关键词
-  keywords = ["Theme", "Hugo"]
+  keywords = ["Theme", "Hugo","xiaomu","blog"]
 
   # 应用图标配置
   [params.app]
@@ -215,7 +346,7 @@ enableEmoji = true
     custom = ''
     # whether to show Hugo and theme info
     # 是否显示 Hugo 和主题信息
-    hugo = true
+    hugo = false
     # whether to show copyright info
     # 是否显示版权信息
     copyright = true
@@ -244,6 +375,11 @@ enableEmoji = true
     # amount of RSS pages
     # RSS 文章数目
     rss = 10
+    [params.section.recentlyUpdated]
+      enable = true
+      rss = true
+      days = 30
+      maxCount = 10
 
   # List (category or tag) page config
   # List (目录或标签) 页面配置
@@ -288,6 +424,9 @@ enableEmoji = true
     # whether to show the full text content in RSS
     # 是否在 RSS 中显示全文内容
     rssFullText = false
+    # Page style ("narrow", "normal", "wide", ...) since v0.2.13
+    # 页面样式 ("narrow", "normal", "wide", ...) since v0.2.13
+    pageStyle = "normal"
     # Table of the contents config
     # 目录配置
     [params.page.toc]
@@ -300,15 +439,32 @@ enableEmoji = true
       # whether to make the table of the contents in the sidebar automatically collapsed
       # 是否使侧边目录自动折叠展开
       auto = true
+      # position of TOC ("left", "right") since v0.2.13
+      # 目录位置 ("left", "right") since v0.2.13
+      position = "right"
+    # Display a message at the beginning of an article to warn the reader that its content might be expired. since v0.2.13
+    # 在文章开头显示提示信息，提醒读者文章内容可能过时。 since v0.2.13
+    [params.page.expirationReminder]
+      enable = false
+      # Display the reminder if the last modified time is more than 90 days ago
+      # 如果文章最后更新于这天数之前，显示提醒
+      reminder = 365
+      # Display warning if the last modified time is more than 180 days ago
+      # 如果文章最后更新于这天数之前，显示警告
+      warning = 180
+      # If the article expires, close the comment or not
+      # 如果文章到期是否关闭评论
+      closeComment = false
     # Code config
     # 代码配置
     [params.page.code]
       # whether to show the copy button of the code block
       # 是否显示代码块的复制按钮
       copy = true
+      edit = true
       # the maximum number of lines of displayed code by default
       # 默认展开显示的代码行数
-      maxShownLines = 10
+      maxShownLines = 50
     # KaTeX mathematical formulas config (KaTeX https://katex.org/)
     # KaTeX 数学公式配置 (KaTeX https://katex.org/)
     [params.page.math]
@@ -483,53 +639,124 @@ enableEmoji = true
       # Publisher info
       # 出版者信息
       [params.page.seo.publisher]
-        name = "xxxx"
+        name = "Xiaomu"
         logoUrl = "/images/avatar.png"
 
+# Cookie consent config
+# Cookie 许可配置
+[params.cookieconsent]
+  enable = true
+  # text strings used for Cookie consent banner
+  # 用于 Cookie 许可横幅的文本字符串
+  [params.cookieconsent.content]
+    message = ""
+    dismiss = ""
+    link = ""
 
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
-    pre = ""
-    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
-    post = ""
-    name = "Posts"
-    url = "/posts/"
-    # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
-    title = ""
-    weight = 1
-  [[menu.main]]
-    identifier = "tags"
-    pre = ""
-    post = ""
-    name = "Tags"
-    url = "/tags/"
-    title = ""
-    weight = 2
-  [[menu.main]]
-    identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categories"
-    url = "/categories/"
-    title = ""
-    weight = 3
-  [[menu.main]]
-    identifier = "github"
-    pre = "<i class='fab fa-github fa-fw'></i>"
-    post = ""
-    name = ""
-    url = "https://github.com/real-jacket"
-    title = "GitHub"
-    weight = 4
 
+# Markup related configuration in Hugo
 # Hugo 解析文档的配置
 [markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
   # 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)
   [markup.highlight]
-    # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
-    noClasses = false
+    ######## 必要配置 necessary configurations ########
+    # https://github.com/Lruihao/FixIt/issues/43
+    codeFences = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false 
+    ######## 必要配置 necessary configurations ########
+    guessSyntax = true
+  # Goldmark is from Hugo 0.60 the default library used for Markdown
+  # Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # whether to use HTML tags directly in the document
+      # 是否在文档中直接使用 HTML 标签
+      unsafe = true
+  # Table Of Contents settings
+  # 目录设置
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
+# Watermark config since v0.2.12
+# Detail config see https://github.com/Lruihao/watermark#readme
+# 水印配置 since v0.2.12
+# 详细参数见 https://github.com/Lruihao/watermark#readme
+[params.watermark]
+  enable = true
+  # watermark's text (HTML format is supported)
+  # 水印内容 (允许 HTML 格式)
+  content = '<img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" /> FixIt Theme'
+  # watermark's transparency
+  # 水印透明度
+  opacity = 0.0125
+  # parent of watermark's container
+  # 水印父节点
+  appendTo = '.wrapper>main'
+  # watermark's width. unit: px
+  # 单水印宽度 单位：px
+  width = 150
+  # watermark's height. unit: px
+  # 单水印高度 单位：px
+  height = 21
+  # row spacing of watermarks. unit: px
+  # 水印行间距 单位：px
+  rowSpacing = 60
+  # col spacing of watermarks. unit: px
+  # 水印列间距 单位：px
+  colSpacing = 30
+  # watermark's tangent angle. unit: deg
+  # 水印旋转角度 单位：deg
+  rotate = 15
+  # watermark's fontSize. unit: rem
+  # 水印字体大小，单位：rem
+  fontSize = 0.85
+  # watermark's fontFamily
+  # 水印字体
+  fontFamily = 'inherit'
+
+# Busuanzi count since v0.2.12
+# 不蒜子统计 since v0.2.12
+[params.ibruce]
+  enable = true
+  # Enable in post meta
+  # 在文章中开启
+  enablePost = false
+  # Site creation time
+  # 网站创立时间
+  siteTime = '2020-03-08T16:31:23+08:00'
+
+# Compatibility config
+# 兼容性设置
+[params.compatibility]
+  # whether to use Polyfill.io to be compatible with older browsers
+  # 是否使用 Polyfill.io 来兼容旧式浏览器
+  polyfill = false
+  # whether to use object-fit-images to be compatible with older browsers
+  # 是否使用 object-fit-images 来兼容旧式浏览器
+  objectFit = false
+
+# Custom JS at last. since v0.2.12
+# "_custom.js" located in "themes/FixIt/assets/js/"
+# you can store your custom JS file in the same path under your project:
+# "assets/js/_custom.js"
+# 页面最后添加自定义 JS since v0.2.12
+# "_custom.js" 位于 "themes/FixIt/assets/js" 目录
+# 可以在你的项目下相同路径存放你自己的自定义 JS 文件:
+# "assets/js/_custom.js"
+[params.customJS]
+  enable = true
 
 # Author config
 # 作者配置
@@ -537,6 +764,27 @@ enableEmoji = true
   name = "xiaomu"
   email = "1762982273@qq.com"
   link = ""
+
+# Sitemap config
+# 网站地图配置
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Permalinks config (https://gohugo.io/content-management/urls/#permalinks)
+# Permalinks 配置 (https://gohugo.io/content-management/urls/#permalinks)
+[Permalinks]
+  # posts = ":year/:month/:filename"
+  posts = ":filename"
+
+# Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
+# 隐私信息配置 (https://gohugo.io/about/hugo-and-gdpr/)
+[privacy]
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
 
 # Options to make output .md files
 # 用于输出 Markdown 格式文档的设置
