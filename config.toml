@@ -584,6 +584,7 @@ enableEmoji = true
         # 可以在你的项目下相同路径存放你自己的数据文件:
         # "assets/data/emoji/"
         emoji = ""
+        commentCount = true
       # Facebook comment config (https://developers.facebook.com/docs/plugins/comments)
       # Facebook 评论系统设置 (https://developers.facebook.com/docs/plugins/comments)
       [params.page.comment.facebook]
@@ -757,6 +758,7 @@ enableEmoji = true
 # "assets/js/_custom.js"
 [params.customJS]
   enable = true
+  minify = true
 
 # Author config
 # 作者配置
@@ -776,7 +778,7 @@ enableEmoji = true
 # Permalinks 配置 (https://gohugo.io/content-management/urls/#permalinks)
 [Permalinks]
   # posts = ":year/:month/:filename"
-  posts = ":filename"
+  posts = "posts:filename"
 
 # Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
 # 隐私信息配置 (https://gohugo.io/about/hugo-and-gdpr/)

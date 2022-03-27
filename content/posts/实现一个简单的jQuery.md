@@ -4,6 +4,7 @@ date: 2018-08-01 22:46:54
 tags: ['JS']
 categories: ['JS']
 hiddenFromHomePage: true
+draft: true
 ---
 
 jQuery 说到底是一个函数对象，一个通过原生 js 实现了某些功能的函数，被封装成了一个 js 对象。jQuery 类似`{0:xx,1:xx,length:2,····}`的伪数组，知道原理后，我们自己也可以实现一个简单的`jQuery`。
