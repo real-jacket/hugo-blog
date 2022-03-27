@@ -3,7 +3,8 @@ name: github pages
 on:
   push:
     branches:
-      - master
+      # - master
+      - dev
 
 jobs:
   deploy:
@@ -28,7 +29,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.95.0"
+          hugo-version: '0.95.0'
           extended: true
 
       - name: Build
@@ -55,6 +56,6 @@ jobs:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
           ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
           ALGOLIA_INDEX_FILE: ${{ secrets.ALGOLIA_INDEX_FILE }}
-        run: |             
+        run: |
           npm install
           npm run algolia
