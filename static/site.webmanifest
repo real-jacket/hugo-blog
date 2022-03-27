@@ -1,6 +1,7 @@
 {
-    "name": "xiaomu's blog",
-    "short_name": "",
+    "name": "Xiaomu's blog",
+    "short_name": "blog",
+    "start_url": "/",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,6 +14,7 @@
             "type": "image/png"
         }
     ],
+    "description": "xiaomu's personal blog",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "display": "standalone"

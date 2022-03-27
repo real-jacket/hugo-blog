@@ -9,4 +9,5 @@ toc:
 weight: false
 categories: [""]
 tags: [""]
+type: "offline"
 ---
