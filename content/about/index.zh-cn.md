@@ -4,6 +4,12 @@ date: 2022-03-26T21:01:49+08:00
 keywords: 
   - Hugo
   - about me
+draft: false
+
+lightgallery: true
+
+math:
+  enable: true
 ---
 
 <h1 style="text-align: right;font-weight: bold;margin-top: 0;">Xiaomu</h1>
@@ -53,7 +59,7 @@ keywords:
 ## 联系
 
 {{< admonition info "Notice" true >}}
-1. 目前正在求职
+1. 目前状态：求职中
 2. 可以通过评论留下公司 JD，我会及时投递
-3. 可以通过 wx 联系我
+3. 可以通过 wx 联系我,wx 号在页面顶部个人信息处
 {{< /admonition >}}
