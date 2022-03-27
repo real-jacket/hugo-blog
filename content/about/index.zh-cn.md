@@ -1,7 +1,9 @@
 ---
 title: "关于"
 date: 2022-03-26T21:01:49+08:00
-comment: true
+keywords: 
+  - Hugo
+  - about me
 ---
 
 <h1 style="text-align: right;font-weight: bold;margin-top: 0;">Xiaomu</h1>
