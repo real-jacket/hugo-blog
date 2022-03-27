@@ -564,14 +564,14 @@ enableEmoji = true
         appId = "0fLTkgl0M514VnXpkynjegh3-gzGzoHsz"
         appKey = "qdwSLKizmMJg6aGyHLf59KhH"
         placeholder = "你想说什么，show your code ！"
-        avatar = "mp"
-        meta= ""
+        avatar = "retro"
+        meta= ['nick','mail','link']
         pageSize = 10
-        lang = ""
+        lang = "zh-cn"
         visitor = true
         recordIP = true
         highlight = true
-        enableQQ = false
+        enableQQ = true
         serverURLs = "https://0fltkgl0.lc-cn-n1-shared.com"
         # emoji data file name, default is "google.yml"
         # ("apple.yml", "google.yml", "facebook.yml", "twitter.yml")
@@ -778,7 +778,7 @@ enableEmoji = true
 # Permalinks 配置 (https://gohugo.io/content-management/urls/#permalinks)
 [Permalinks]
   # posts = ":year/:month/:filename"
-  posts = "posts:filename"
+  posts = "posts/:filename"
 
 # Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
 # 隐私信息配置 (https://gohugo.io/about/hugo-and-gdpr/)
