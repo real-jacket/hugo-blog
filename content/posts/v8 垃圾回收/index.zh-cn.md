@@ -8,7 +8,6 @@ authorLink: ""
 description: "讲解了 v8 垃圾回收如何工作的"
 keywords: ["垃圾回收","代际假说","谷歌垃圾回收","chrome"]
 license: ""
-comment: true
 weight: 0
 
 tags: ["v8","垃圾回收"]

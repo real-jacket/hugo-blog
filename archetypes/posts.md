@@ -8,7 +8,6 @@ authorLink: ""
 description: ""
 keywords: []
 license: ""
-comment: true
 weight: 0
 
 tags: []

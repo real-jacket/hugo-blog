@@ -8,7 +8,6 @@ authorLink: ""
 description: "配置一个高效、美观、易用的 unix 命令行，极大提高你的效率"
 keywords: ["zsh","cli","命令行"]
 license: ""
-comment: true
 weight: 0
 
 tags: ["zsh","工具"]
