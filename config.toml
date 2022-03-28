@@ -26,8 +26,8 @@ enableGitInfo = true
 enableEmoji = true
 
 # Post frontmatter config
-[frontmatter]
-  lastmod = [":git", "lastmod", ":fileModTime", ":defalut"]
+# [frontmatter]
+#   lastmod = [":git", "lastmod", ":fileModTime", ":defalut"]
 
 [languages]
   [languages.en]
