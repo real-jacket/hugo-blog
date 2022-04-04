@@ -3,10 +3,10 @@ title: "oh my zsh！你的命令行让人不敢相信"
 subtitle: ""
 date: 2022-03-27T15:21:39+08:00
 draft: false
-author: ""
+author: "xiaomu"
 authorLink: ""
 description: "配置一个高效、美观、易用的 unix 命令行，极大提高你的效率"
-keywords: ["zsh","cli","命令行"]
+keywords: ["zsh","cli","命令行","美观易用"]
 license: ""
 weight: 0
 
@@ -17,11 +17,11 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 
 summary: ""
-resources:
-- name: featured-image
-  src: featured-image.jpg
-- name: featured-image-preview
-  src: featured-image-preview.jpg
+# resources:
+# - name: featured-image
+#   src: featured-image.jpg
+# - name: featured-image-preview
+#   src: featured-image-preview.jpg
 
 toc:
   enable: true
@@ -98,16 +98,19 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 
 具体的安装方式请查看插件的github：
 
-- zsh-autosuggestion 路径自动补全
+- zsh-autosuggestion 路径自动补全，官方自带插件，可以直接在`~/.zshrc`中配置
 - zsh-syntax-highlighting 命令语法高亮
 - [常见git缩写命令](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git)
 - git-open打开远程仓库
 - web-search 直接在命令行搜索，例如： `google node` 会自动打开Google搜索node
 - last-working-dir 打开终端时自动为上次退出时的目录(zsh 自带插件)
-  - 注意：在 windows10 wsl 中，这个插件判断当前为 $HOME 则不会进行跳转，所以需要在 wsl 中设置一个启动目录非 $HOME 的，比如 ~ 目录
 - encode base64编码转化插件
 - urltools 使用urlcode命令对url进行编码
 - wd 给常用文件目录标记，快速跳转到指定目录，比如：进入目录后, wd add web，该目录被标记成web，下次直接 wd web就可以进入到该目录。直接在配置文件里添加
+
+{{< admonition type=tip title="小提示" open=true >}}
+关于 last-working-dir 插件，在 windows10 wsl 中，这个插件判断当前为 $HOME 则不会进行跳转，所以需要在 wsl 中设置一个启动目录非 $HOME 的，比如 ~ 目录
+{{< /admonition >}}
 
 ### linux自带插件
 
