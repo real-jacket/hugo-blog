@@ -15,3 +15,4 @@ if [ -n "$(git status -s)" ];then
     git commit -m "$msg"
     git push 
 fi
+rm -rf public
