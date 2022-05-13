@@ -55,6 +55,7 @@ jobs:
           external_repository: real-jacket/real-jacket.github.io
           publish_branch: master
           publish_dir: ./public
+          allow_empty_commit: true
 
       - name: Push search json
         env:
