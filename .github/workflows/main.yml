@@ -3,8 +3,8 @@ name: github pages
 on:
   push:
     branches:
-      # - master
-      - dev
+      - master
+      # - dev
 
 jobs:
   deploy:
@@ -33,7 +33,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --enableGitInfo --ignoreCache
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -42,7 +42,7 @@ jobs:
           external_repository: real-jacket/real-jacket.github.io
           publish_branch: master
           publish_dir: ./public
-
+          force_orphan: true
 
       - name: Push search json
         env:
