@@ -8,9 +8,9 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+    runs-on: ubuntu-latest
+    # concurrency:
+    #   group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Checkout Hugo repo
         uses: actions/checkout@v2
