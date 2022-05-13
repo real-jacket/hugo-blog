@@ -9,9 +9,18 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # concurrency:
-    #   group: ${{ github.workflow }}-${{ github.ref }}
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+
+
     steps:
+      - name: Git Configuration
+        run: |
+          git config --global core.quotePath false
+          git config --global core.autocrlf false
+          git config --global core.safecrlf true
+          git config --global core.ignorecase false
+
       - name: Checkout Hugo repo
         uses: actions/checkout@v2
         with:
@@ -32,9 +41,9 @@ jobs:
           hugo-version: latest
           extended: true
 
-      - name: Restore file modification time
-        run: |
-          find content/posts/**/* -name '*.md' | while read file; do touch -d "$(git log -1 --format="@%ct" "$file")" "$file"; done
+      # - name: Restore file modification time
+      #   run: |
+      #     find content/posts/**/* -name '*.md' | while read file; do touch -d "$(git log -1 --format="@%ct" "$file")" "$file"; done
 
       - name: Build
         run: hugo -v --gc --minify
