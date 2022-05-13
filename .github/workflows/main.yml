@@ -14,13 +14,6 @@ jobs:
 
 
     steps:
-      - name: Git Configuration
-        run: |
-          git config --global core.quotePath false
-          git config --global core.autocrlf false
-          git config --global core.safecrlf true
-          git config --global core.ignorecase false
-
       - name: Checkout Hugo repo
         uses: actions/checkout@v2
         with:
@@ -44,6 +37,13 @@ jobs:
       # - name: Restore file modification time
       #   run: |
       #     find content/posts/**/* -name '*.md' | while read file; do touch -d "$(git log -1 --format="@%ct" "$file")" "$file"; done
+
+      - name: Git Configuration
+        run: |
+          git config --global core.quotePath false
+          git config --global core.autocrlf false
+          git config --global core.safecrlf true
+          git config --global core.ignorecase false
 
       - name: Build
         run: hugo -v --gc --minify
