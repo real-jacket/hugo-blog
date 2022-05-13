@@ -13,7 +13,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Checkout Hugo repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           # token: ${{ secrets.ACCESS_TOKEN }}
           submodules: recursive # Fetch Hugo themes (true OR recursive)
@@ -29,11 +29,11 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest"
+          hugo-version: latest
           extended: true
 
       - name: Build
-        run: hugo --minify --enableGitInfo --ignoreCache
+        run: hugo -v --gc --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

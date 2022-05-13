@@ -1,6 +1,6 @@
-[submodule "themes/LoveIt"]
-	path = themes/LoveIt
-	url = https://github.com/dillonzq/LoveIt.git
+# [submodule "themes/LoveIt"]
+# 	path = themes/LoveIt
+# 	url = https://github.com/dillonzq/LoveIt.git
 # [submodule "public"]
 # 	path = public
 # 	url = https://github.com/real-jacket/real-jacket.github.io.git
