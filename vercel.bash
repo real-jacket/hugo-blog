@@ -1,7 +1,8 @@
 #!/bin/bash
 
 export TZ='Asia/Shanghai'
-git ls-files -z | while read -d '' path; do
-    touch -d "$(git log -1 --format="@%ct" "$path")" "$path";
-done
+git config --global core.quotePath false
+git config --global core.autocrlf false
+git config --global core.safecrlf true
+git config --global core.ignorecase false
 hugo -v --minify --gc
