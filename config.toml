@@ -14,6 +14,8 @@ ignoreErrors = ["error-remote-getjson"]
 # theme = "LoveIt"
 theme = "FixIt"
 
+# 设置时区
+TimeZone = "Asia/Shanghai"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
