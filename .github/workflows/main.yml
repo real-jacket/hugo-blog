@@ -48,6 +48,15 @@ jobs:
       - name: Build
         run: hugo -v --gc --minify
 
+      - name: Push Docker images
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: ${{ secrets.DOCKER_USER }}/cloud-music
+          tag_with_ref: true
+          tag_with_sha: true
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
