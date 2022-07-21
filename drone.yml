@@ -2,9 +2,8 @@ type: docker
 kind: pipeline
 name: default
 
-
 steps:
-- name: clone
+- name: submodule
   image: plugins/git
   settings:
     depth: 0
