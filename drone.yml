@@ -1,0 +1,12 @@
+type: docker
+kind: pipeline
+name: default
+
+steps:
+- name: hugo-build
+  image: plugins/hugo
+  settings:
+    hugo_version: latest
+    validate: true
+  commands:
+   - hugo -v --gc --minify
