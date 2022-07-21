@@ -2,7 +2,13 @@ type: docker
 kind: pipeline
 name: default
 
+
 steps:
+- name: clone
+  image: plugins/git
+  settings:
+    depth: 0
+    recursive: true
 - name: hugo-build
   image: plugins/hugo
   settings:
