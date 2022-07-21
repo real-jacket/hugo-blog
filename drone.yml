@@ -8,11 +8,12 @@ steps:
   settings:
     depth: 0
     recursive: true
+
 - name: hugo-build
   image: plugins/hugo
   settings:
-    hugo_version: latest
+    hugo_version: 0.96.0+extended
     validate: true
     theme: FixIt
   commands:
-   - hugo -v --gc --minify
+  - hugo -v --gc --minify
