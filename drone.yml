@@ -3,15 +3,20 @@ kind: pipeline
 name: default
 
 steps:
-- name: submodule
+  
+- name: Build
   image: plugins/git
   settings:
     depth: 0
     recursive: true
 
 - name: hugo-build
-  image: plugins/hugo
-  settings:
-    hugo_version: 0.96.0+extended
-    validate: true
-    theme: FixIt
+  image: golang
+  commands:
+  - mkdir $HOME/src
+  - cd $HOME/src
+  - git clone https://github.com/gohugoio/hugo.git
+  - cd hugo
+  - go install --tags extended
+  - cd /drone/src
+  - hugo -v --gc --minify
