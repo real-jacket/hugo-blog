@@ -15,5 +15,3 @@ steps:
     hugo_version: 0.96.0+extended
     validate: true
     theme: FixIt
-  commands:
-  - hugo -v --gc --minify
