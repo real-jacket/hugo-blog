@@ -13,6 +13,6 @@ steps:
   settings:
     hugo_version: latest
     validate: true
-    theme: /themes/FixIt
+    theme: FixIt
   commands:
    - hugo -v --gc --minify
