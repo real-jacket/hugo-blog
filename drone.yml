@@ -2,21 +2,20 @@ type: docker
 kind: pipeline
 name: default
 
+clone:
+  disable: true
+
+workspace:
+  path: /drone/src
+
 steps:
-  
-- name: Build
+- name: clone
   image: plugins/git
   settings:
     depth: 0
     recursive: true
 
 - name: hugo-build
-  image: golang
+  image: klakegg/hugo:ext-ubuntu-onbuild
   commands:
-  - mkdir $HOME/src
-  - cd $HOME/src
-  - git clone https://github.com/gohugoio/hugo.git
-  - cd hugo
-  - go install --tags extended
-  - cd /drone/src
   - hugo -v --gc --minify
